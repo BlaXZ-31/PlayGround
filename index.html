@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#070b11">
+  <title>Midnight Run — Street Racing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game" aria-label="Midnight Run street racing game">
+    <canvas id="scene" aria-label="Night highway racing game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">M</span><span>MIDNIGHT<span class="brand-light"> RUN</span><small>STREET RACING // BAY CITY</small></span></div>
+      <button id="pauseBtn" class="pause-button" aria-label="Pause game">Ⅱ</button>
+    </header>
+    <section class="hud" aria-live="polite">
+      <div class="speed-card"><div class="speed-line"><span id="speed">000</span><small>KM/H</small></div><div class="speed-track"><i id="speedBar"></i></div><div class="gear-line">GEAR <b id="gear">1</b><span id="rpmLabel">●●●○○</span></div></div>
+      <div class="race-card"><div class="label">NIGHT RUN <span id="raceStatus">IN PROGRESS</span></div><strong id="distance">0.0 <small>KM</small></strong><div class="subline"><span>TARGET 3.2 KM</span><span id="timer">00:00</span></div></div>
+      <div class="heat-card"><div class="heat-title"><span>POLICE HEAT</span><b id="heatLabel">1</b></div><div class="heat-stars" id="stars">★<i>★</i><i>★</i><i>★</i><i>★</i></div><div class="heat-note" id="heatNote">KEEP IT CLEAN</div></div>
+      <div class="nitro-card"><div class="nitro-head"><span>NITROUS</span><b id="nitroPct">100%</b></div><div class="nitro-track"><i id="nitroBar"></i></div><div class="nitro-hint">HOLD <b>SPACE</b></div></div>
+    </section>
+    <div class="toast" id="toast"></div>
+    <div class="touch-controls" aria-label="Touch driving controls">
+      <div class="steer-group"><button class="touch-btn steer" data-control="left" aria-label="Steer left">‹</button><button class="touch-btn steer" data-control="right" aria-label="Steer right">›</button></div>
+      <div class="pedal-group"><button class="touch-btn nitro" data-control="nitro" aria-label="Nitro boost"><span>BOOST</span>⚡</button><button class="touch-btn pedal" data-control="brake" aria-label="Brake">BRAKE</button><button class="touch-btn pedal accelerate" data-control="accelerate" aria-label="Accelerate">GAS <span>▲</span></button></div>
+    </div>
+    <div id="overlay" class="overlay">
+      <div class="menu-card">
+        <div class="eyebrow"><i></i> BAY CITY • 02:17 AM <i></i></div>
+        <div class="hero-title">MIDNIGHT<br><em>RUN</em><span class="title-slash">//</span></div>
+        <p id="menuCopy">The city sleeps. The streets don't.<br>Make it to the coast before the heat catches up.</p>
+        <div class="menu-stats"><div><b>3.2<span>KM</span></b><small>THE SPRINT</small></div><div><b>5<span>★</span></b><small>MAX HEAT</small></div><div><b>1<span> LIFE</span></b><small>NO REWINDS</small></div></div>
+        <button id="playBtn" class="play-button">START YOUR RUN <span>↗</span></button>
+        <div class="controls-copy"><b>DRIVE</b> <span>← →</span> STEER <span>↑</span> GAS <span>↓</span> BRAKE <span>SPACE</span> NITRO<br><small>Touch controls available on phones and tablets</small></div>
+      </div>
+      <div class="corner-note">A MIDNIGHT RUN<br><span>VOL. 01 — THE COASTLINE</span></div>
+    </div>
+    <div id="pauseOverlay" class="pause-overlay hidden"><div class="pause-box"><span class="eyebrow">TAKE A BREATHER</span><h2>RUN PAUSED</h2><button id="resumeBtn" class="play-button">BACK TO THE ROAD <span>↗</span></button></div></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
